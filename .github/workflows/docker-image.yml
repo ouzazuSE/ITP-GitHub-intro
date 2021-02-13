@@ -22,7 +22,7 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
         
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ouzazu001/app-js:tagname
+      run: docker build . --file Dockerfile --tag ouzazu001/registry:$(date +%s)
       
     - name: Docker Push
-      run: docker push ouzazu001/app-js
+      run: docker push ouzazu001/registry
